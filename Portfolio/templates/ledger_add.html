@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Trip</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body class="bdy">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="/">Back to Home</a>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1 class="heading-center">Add Trip</h1>
+        <form method="post" action="">
+            <div class="form-group">
+                <label for="place">Starting Place:</label>
+                <input type="text" class="form-control" name="place" id="place">
+            </div>
+            <div class="form-group">
+                <label for="trip_start_date">Trip Start Date:</label>
+                <input type="date" class="form-control" name="trip_start_date" id="trip_start_date">
+            </div>
+            <div class="form-group">
+                <label for="trip_end_date">Trip End Date:</label>
+                <input type="date" class="form-control" name="trip_end_date" id="trip_end_date">
+            </div>
+            <div class="form-group">
+                <label for="places_visited">Places Visited:</label>
+                <textarea class="form-control" name="places_visited" id="places_visited" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="total_cost">Total Cost:</label>
+                <input type="text" class="form-control" name="total_cost" id="total_cost">
+            </div>
+            <button type="submit" class="btn btn-primary">Add Trip</button>
+        </form>
+        <a href="{{ url_for('ledger_view') }}" class="btn btn-primary mt-3">View Ledger</a>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

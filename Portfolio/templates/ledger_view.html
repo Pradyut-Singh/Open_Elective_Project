@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trip Ledger</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body class="bdy">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url_for('ledger_add') }}">Add Trip</a>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1 class="center-heading">Trip Ledger</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Place</th>
+                    <th>Trip Start Date</th>
+                    <th>Trip End Date</th>
+                    <th>Places Visited</th>
+                    <th>Total Cost</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for trip in trips %}
+                <tr>
+                    <td>{{ trip.place }}</td>
+                    <td>{{ trip.trip_start_date }}</td>
+                    <td>{{ trip.trip_end_date }}</td>
+                    <td>{{ trip.places_visited }}</td>
+                    <td>{{ trip.total_cost }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <!-- Bootstrap JS (optional) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
